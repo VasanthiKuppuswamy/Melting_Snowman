@@ -48,15 +48,18 @@ def display_game_state(mistakes, secret_word, guessed_letters):
             display_word += "_ "
     print("Word: ", display_word, "\n")
 
+def print_game_header():
+    """Print the header at start of the game"""
+    print("⭐" * 25)
+    print(" WELCOME TO SNOWMAN MELTDOWN! ".center(30, "~"))
+    print("⭐" * 25)
+    print("\nGuess the word before your snowman melts!\n")
 
 
 def play_game():
     """The main function using the gameplay loop"""
     secret_word = get_random_word()
-    print("Welcome to Snowman Meltdown!")
-    print("Secret word selected: " + secret_word)  # for testing, later remove this line
-
-
+    print_game_header()
     guessed_letters = []
     mistakes = 0
     max_mistakes = len(STAGES) - 1
@@ -69,7 +72,6 @@ def play_game():
     # For now, simply prompt the user once:
     guess = input("Guess a letter: ").lower()
     print("You guessed:", guess)
-
 
 if __name__ == "__main__":
     play_game()
