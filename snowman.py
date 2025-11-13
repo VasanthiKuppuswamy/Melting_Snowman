@@ -101,7 +101,6 @@ def play_game():
     print("Oh no! The snowman melted completely!")
     print(f"The word was: {secret_word}")
 
-
 if __name__ == "__main__":
     while True:
         play_game()
